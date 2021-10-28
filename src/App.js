@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react/cjs/react.development";
 
 function App() {
   const [squares, setSquares] = useState({
@@ -15,28 +16,32 @@ function App() {
   const [type, setType] = useState(false);
   const [win, setWin] = useState(false);
 
-  const winLines = [
-    [squares[1], squares[2], squares[3]],
-    [squares[4], squares[5], squares[6]],
-    [squares[7], squares[8], squares[9]],
-    [squares[1], squares[4], squares[7]],
-    [squares[2], squares[5], squares[8]],
-    [squares[3], squares[6], squares[9]],
-    [squares[1], squares[5], squares[9]],
-    [squares[3], squares[5], squares[7]],
-  ];
-
-  const winEval = () => {
-    setWin(winLines.some((line) => line.every((square) => square.status)));
-  };
+  useEffect(() => {
+    const winLines = [
+      [squares[1], squares[2], squares[3]],
+      [squares[4], squares[5], squares[6]],
+      [squares[7], squares[8], squares[9]],
+      [squares[1], squares[4], squares[7]],
+      [squares[2], squares[5], squares[8]],
+      [squares[3], squares[6], squares[9]],
+      [squares[1], squares[5], squares[9]],
+      [squares[3], squares[5], squares[7]],
+    ];
+    setWin((win) =>
+      winLines.some((line) =>
+        line.every(
+          (square) => square.status && square.tipo === (type ? "o" : "x")
+        )
+      )
+    );
+  }, [type, squares]);
 
   const handleClick = (event) => {
     setSquares((prevValue) => ({
       ...prevValue,
-      [event.target.value]: { status: true, tipo: type ? "o" : "x" },
+      [event.target.value]: { status: true, tipo: type ? "x" : "o" },
     }));
     setType(!type);
-    winEval();
   };
 
   return (
