@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.squaresGeneralDiv {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 50vh;
+  padding: 20px;
+}
+.lineDiv button {
+  /* background-color: green; */
+  width: 15vw;
+  height: 15vh;
+  border: solid 0.5px black;
+}

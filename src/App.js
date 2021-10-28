@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
+import "./App.css";
+
 
 function App() {
   const [squares, setSquares] = useState({
@@ -44,42 +46,51 @@ function App() {
     setType(!type);
   };
 
+  // const handleClickIcon = () => {
+  //   setSquares();
+  // }
+
   return (
-    <div>
+    <div class="container">
       <h1>{win ? "WIN!" : "PLAY"}</h1>
-      <div>
-        <button onClick={handleClick} value={1}>
-          1
-        </button>
-        <button onClick={handleClick} value={2}>
-          2
-        </button>
-        <button onClick={handleClick} value={3}>
-          3
-        </button>
+      <div className="squaresGeneralDiv">
+        <div>
+          <div className="lineDiv">
+            <button onClick={handleClick} value={1}>
+              {squares[1].tipo}
+            </button>
+            <button onClick={handleClick} value={2}>
+              {squares[2].tipo}
+            </button>
+            <button onClick={handleClick} value={3}>
+             {squares[3].tipo}
+            </button>
+          </div>
+          <div className="lineDiv">
+            <button onClick={handleClick} value={4}>
+              {squares[4].tipo}
+            </button>
+            <button onClick={handleClick} value={5}>
+              {squares[5].tipo}
+            </button>
+            <button onClick={handleClick} value={6}>
+              {squares[6].tipo}
+            </button>
+          </div>
+          <div className="lineDiv">
+            <button onClick={handleClick} value={7}>
+              {squares[7].tipo}
+            </button>
+            <button onClick={handleClick} value={8}>
+              {squares[8].tipo}
+            </button>
+            <button onClick={handleClick} value={9}>
+              {squares[9].tipo}
+            </button>
+          </div>
+        </div>
       </div>
-      <div>
-        <button onClick={handleClick} value={4}>
-          4
-        </button>
-        <button onClick={handleClick} value={5}>
-          5
-        </button>
-        <button onClick={handleClick} value={6}>
-          6
-        </button>
-      </div>
-      <div>
-        <button onClick={handleClick} value={7}>
-          7
-        </button>
-        <button onClick={handleClick} value={8}>
-          8
-        </button>
-        <button onClick={handleClick} value={9}>
-          9
-        </button>
-      </div>
+      
     </div>
   );
 }
