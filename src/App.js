@@ -90,7 +90,11 @@ function App() {
               style={{
                 color: squares[1].status ? "black" : "white",
                 backgroundColor:
-                  win && winLine.some((elem) => elem.id === 1) ? "aqua" : null,
+                  win &&
+                  winLine.length > 0 &&
+                  winLine.some((elem) => elem.id === 1)
+                    ? "aqua"
+                    : null,
               }}
               onClick={handleClick}
               value={1}
@@ -101,7 +105,11 @@ function App() {
               style={{
                 color: squares[2].status ? "black" : "white",
                 backgroundColor:
-                  win && winLine.some((elem) => elem.id === 2) ? "aqua" : null,
+                  win &&
+                  winLine.length > 0 &&
+                  winLine.some((elem) => elem.id === 2)
+                    ? "aqua"
+                    : null,
               }}
               onClick={handleClick}
               value={2}
@@ -112,7 +120,11 @@ function App() {
               style={{
                 color: squares[3].status ? "black" : "white",
                 backgroundColor:
-                  win && winLine.some((elem) => elem.id === 3) ? "aqua" : null,
+                  win &&
+                  winLine.length > 0 &&
+                  winLine.some((elem) => elem.id === 3)
+                    ? "aqua"
+                    : null,
               }}
               onClick={handleClick}
               value={3}
@@ -125,7 +137,11 @@ function App() {
               style={{
                 color: squares[4].status ? "black" : "white",
                 backgroundColor:
-                  win && winLine.some((elem) => elem.id === 4) ? "aqua" : null,
+                  win &&
+                  winLine.length > 0 &&
+                  winLine.some((elem) => elem.id === 4)
+                    ? "aqua"
+                    : null,
               }}
               onClick={handleClick}
               value={4}
@@ -136,7 +152,11 @@ function App() {
               style={{
                 color: squares[5].status ? "black" : "white",
                 backgroundColor:
-                  win && winLine.some((elem) => elem.id === 5) ? "aqua" : null,
+                  win &&
+                  winLine.length > 0 &&
+                  winLine.some((elem) => elem.id === 5)
+                    ? "aqua"
+                    : null,
               }}
               onClick={handleClick}
               value={5}
@@ -147,7 +167,11 @@ function App() {
               style={{
                 color: squares[6].status ? "black" : "white",
                 backgroundColor:
-                  win && winLine.some((elem) => elem.id === 6) ? "aqua" : null,
+                  win &&
+                  winLine.length > 0 &&
+                  winLine.some((elem) => elem.id === 6)
+                    ? "aqua"
+                    : null,
               }}
               onClick={handleClick}
               value={6}
@@ -160,7 +184,11 @@ function App() {
               style={{
                 color: squares[7].status ? "black" : "white",
                 backgroundColor:
-                  win && winLine.some((elem) => elem.id === 7) ? "aqua" : null,
+                  win &&
+                  winLine.length > 0 &&
+                  winLine.some((elem) => elem.id === 7)
+                    ? "aqua"
+                    : null,
               }}
               onClick={handleClick}
               value={7}
@@ -171,7 +199,11 @@ function App() {
               style={{
                 color: squares[8].status ? "black" : "white",
                 backgroundColor:
-                  win && winLine.some((elem) => elem.id === 8) ? "aqua" : null,
+                  win &&
+                  winLine.length > 0 &&
+                  winLine.some((elem) => elem.id === 8)
+                    ? "aqua"
+                    : null,
               }}
               onClick={handleClick}
               value={8}
@@ -182,7 +214,11 @@ function App() {
               style={{
                 color: squares[9].status ? "black" : "white",
                 backgroundColor:
-                  win && winLine.some((elem) => elem.id === 9) ? "aqua" : null,
+                  win &&
+                  winLine.length > 0 &&
+                  winLine.some((elem) => elem.id === 9)
+                    ? "aqua"
+                    : null,
               }}
               onClick={handleClick}
               value={9}
