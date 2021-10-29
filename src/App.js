@@ -37,13 +37,7 @@ function App() {
       )
     );
 
-    setTie((tie) =>
-      winLines.some((line) =>
-        line.every(
-          (square) => square.status && square.tipo !== (type ? "o" : "x")
-        )
-      )
-    );
+    setTie(Object.values(squares));
   }, [type, squares]);
 
   const handleClick = (event) => {
@@ -148,7 +142,11 @@ function App() {
           </div>
 
           <div>
-            {win ? <button onClick={handleRestart}>Restart</button> : null}
+            {win ? <button onClick={handleRestart}>Play Again!</button> : null}
+          </div>
+
+          <div>
+            {tie ? <button onClick={handleRestart}>Restart</button> : null}
           </div>
         </div>
       </div>
