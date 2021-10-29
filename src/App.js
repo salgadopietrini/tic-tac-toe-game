@@ -39,15 +39,13 @@ function App() {
     );
     setTie(Object.values(squares).every((elem) => elem.status));
 
-    if (win) {
-      setWinLine(
-        winLines.find((line) =>
-          line.every(
-            (square) => square.status && square.tipo === (type ? "o" : "x")
-          )
+    setWinLine(
+      winLines.find((line) =>
+        line.every(
+          (square) => square.status && square.tipo === (type ? "o" : "x")
         )
-      );
-    }
+      )
+    );
   }, [type, squares, win]);
 
   const handleClick = (event) => {
@@ -66,16 +64,17 @@ function App() {
 
   const handleRestart = () => {
     setSquares({
-      1: { status: false, tipo: "." },
-      2: { status: false, tipo: "." },
-      3: { status: false, tipo: "." },
-      4: { status: false, tipo: "." },
-      5: { status: false, tipo: "." },
-      6: { status: false, tipo: "." },
-      7: { status: false, tipo: "." },
-      8: { status: false, tipo: "." },
-      9: { status: false, tipo: "." },
+      1: { id: 1, status: false, tipo: "." },
+      2: { id: 2, status: false, tipo: "." },
+      3: { id: 3, status: false, tipo: "." },
+      4: { id: 4, status: false, tipo: "." },
+      5: { id: 5, status: false, tipo: "." },
+      6: { id: 6, status: false, tipo: "." },
+      7: { id: 7, status: false, tipo: "." },
+      8: { id: 8, status: false, tipo: "." },
+      9: { id: 9, status: false, tipo: "." },
     });
+    setWinLine([1, 2, 3]);
   };
 
   return (
