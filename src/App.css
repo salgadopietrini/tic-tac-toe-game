@@ -7,6 +7,7 @@
 .squaresGeneralDiv {
   /* background-color: red; */
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 50vw;
@@ -14,7 +15,8 @@
   padding: 20px;
 }
 .lineDiv button {
-  /* background-color: green; */
+  background-color: white;
+  color: white;
   width: 15vw;
   height: 15vh;
   border: solid 0.5px black;
