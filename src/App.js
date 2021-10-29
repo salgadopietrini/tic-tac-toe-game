@@ -15,6 +15,7 @@ function App() {
   });
   const [type, setType] = useState(false);
   const [win, setWin] = useState(false);
+  const [tie, setTie] = useState(false);
 
   useEffect(() => {
     const winLines = [
@@ -35,6 +36,14 @@ function App() {
         )
       )
     );
+
+    setTie((tie) =>
+      winLines.some((line) =>
+        line.every(
+          (square) => square.status && square.tipo !== (type ? "o" : "x")
+        )
+      )
+    );
   }, [type, squares]);
 
   const handleClick = (event) => {
@@ -47,10 +56,26 @@ function App() {
     }
   };
 
+  const handleRestart = () => {
+    setSquares({
+      1: { status: false, tipo: "." },
+      2: { status: false, tipo: "." },
+      3: { status: false, tipo: "." },
+      4: { status: false, tipo: "." },
+      5: { status: false, tipo: "." },
+      6: { status: false, tipo: "." },
+      7: { status: false, tipo: "." },
+      8: { status: false, tipo: "." },
+      9: { status: false, tipo: "." },
+    });
+  };
+
   return (
     <div className="container">
       <h1>{win ? "WIN!" : "PLAY"}</h1>
       <div className="squaresGeneralDiv">
+        <h2>Turn:</h2>
+        <div>{type ? "x" : "o"}</div>
         <div>
           <div className="lineDiv">
             <button
@@ -122,7 +147,9 @@ function App() {
             </button>
           </div>
 
-          <div>{win ? <button>Restart</button> : null}</div>
+          <div>
+            {win ? <button onClick={handleRestart}>Restart</button> : null}
+          </div>
         </div>
       </div>
     </div>
