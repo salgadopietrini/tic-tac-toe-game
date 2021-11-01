@@ -80,19 +80,21 @@ function App() {
   return (
     <div className="container">
       <h1>{win ? "WIN!" : tie ? "TIE" : "PLAY"}</h1>
-      <div className="squaresGeneralDiv">
-        <h2>Turn:</h2>
-        <div>{type ? "x" : "o"}</div>
+      <div>
+        <div className="squaresGeneralDiv">
+          <h2>Next Player</h2>
+          <div className="player">{type ? "x" : "o"}</div>
+        </div>
         <div>
           <div className="lineDiv">
             <button
               style={{
-                color: squares[1].status ? "black" : "white",
+                color: squares[1].status ? "rgba(238, 196, 208, 0.747)" : "rgb(163, 14, 76)",
                 backgroundColor:
                   win &&
                   winLine.length > 0 &&
                   winLine.some((elem) => elem.id === 1)
-                    ? "aqua"
+                    ? "rgba(238, 196, 208, 0.13)"
                     : null,
               }}
               onClick={handleClick}
@@ -101,13 +103,14 @@ function App() {
               {squares[1].tipo}
             </button>
             <button
+              className="lineV"
               style={{
-                color: squares[2].status ? "black" : "white",
+                color: squares[2].status ? "rgba(238, 196, 208, 0.747)" : "rgb(163, 14, 76)",
                 backgroundColor:
                   win &&
                   winLine.length > 0 &&
                   winLine.some((elem) => elem.id === 2)
-                    ? "aqua"
+                    ? "rgba(238, 196, 208, 0.13)"
                     : null,
               }}
               onClick={handleClick}
@@ -117,12 +120,12 @@ function App() {
             </button>
             <button
               style={{
-                color: squares[3].status ? "black" : "white",
+                color: squares[3].status ? "rgba(238, 196, 208, 0.747)" : "rgb(163, 14, 76)",
                 backgroundColor:
                   win &&
                   winLine.length > 0 &&
                   winLine.some((elem) => elem.id === 3)
-                    ? "aqua"
+                    ? "rgba(238, 196, 208, 0.13)"
                     : null,
               }}
               onClick={handleClick}
@@ -131,15 +134,15 @@ function App() {
               {squares[3].tipo}
             </button>
           </div>
-          <div className="lineDiv">
+          <div className="lineDiv lineH">
             <button
               style={{
-                color: squares[4].status ? "black" : "white",
+                color: squares[4].status ? "rgba(238, 196, 208, 0.747)" : "rgb(163, 14, 76)",
                 backgroundColor:
                   win &&
                   winLine.length > 0 &&
                   winLine.some((elem) => elem.id === 4)
-                    ? "aqua"
+                    ? "rgba(238, 196, 208, 0.13)"
                     : null,
               }}
               onClick={handleClick}
@@ -148,13 +151,14 @@ function App() {
               {squares[4].tipo}
             </button>
             <button
+              className="lineV"
               style={{
-                color: squares[5].status ? "black" : "white",
+                color: squares[5].status ? "rgba(238, 196, 208, 0.747)" : "rgb(163, 14, 76)",
                 backgroundColor:
                   win &&
                   winLine.length > 0 &&
                   winLine.some((elem) => elem.id === 5)
-                    ? "aqua"
+                    ? "rgba(238, 196, 208, 0.13)"
                     : null,
               }}
               onClick={handleClick}
@@ -164,12 +168,12 @@ function App() {
             </button>
             <button
               style={{
-                color: squares[6].status ? "black" : "white",
+                color: squares[6].status ? "rgba(238, 196, 208, 0.747)" : "rgb(163, 14, 76)",
                 backgroundColor:
                   win &&
                   winLine.length > 0 &&
                   winLine.some((elem) => elem.id === 6)
-                    ? "aqua"
+                    ? "rgba(238, 196, 208, 0.13)"
                     : null,
               }}
               onClick={handleClick}
@@ -181,12 +185,12 @@ function App() {
           <div className="lineDiv">
             <button
               style={{
-                color: squares[7].status ? "black" : "white",
+                color: squares[7].status ? "rgba(238, 196, 208, 0.747)" : "rgb(163, 14, 76)",
                 backgroundColor:
                   win &&
                   winLine.length > 0 &&
                   winLine.some((elem) => elem.id === 7)
-                    ? "aqua"
+                    ? "rgba(238, 196, 208, 0.13)"
                     : null,
               }}
               onClick={handleClick}
@@ -195,13 +199,14 @@ function App() {
               {squares[7].tipo}
             </button>
             <button
+              className="lineV"
               style={{
-                color: squares[8].status ? "black" : "white",
+                color: squares[8].status ? "rgba(238, 196, 208, 0.747)" : "rgb(163, 14, 76)",
                 backgroundColor:
                   win &&
                   winLine.length > 0 &&
                   winLine.some((elem) => elem.id === 8)
-                    ? "aqua"
+                    ? "rgba(238, 196, 208, 0.13)"
                     : null,
               }}
               onClick={handleClick}
@@ -211,12 +216,12 @@ function App() {
             </button>
             <button
               style={{
-                color: squares[9].status ? "black" : "white",
+                color: squares[9].status ? "rgba(238, 196, 208, 0.747)" : "rgb(163, 14, 76)",
                 backgroundColor:
                   win &&
                   winLine.length > 0 &&
                   winLine.some((elem) => elem.id === 9)
-                    ? "aqua"
+                    ? "rgba(238, 196, 208, 0.13)"
                     : null,
               }}
               onClick={handleClick}
@@ -226,9 +231,9 @@ function App() {
             </button>
           </div>
 
-          <div>
+          <div className="playAgain">
             {win || tie ? (
-              <button onClick={handleRestart}>Play Again!</button>
+              <button className="playAgainBtn" onClick={handleRestart}>Play Again!</button>
             ) : null}
           </div>
         </div>
